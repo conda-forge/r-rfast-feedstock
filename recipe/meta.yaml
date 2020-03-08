@@ -1,4 +1,4 @@
-{% set version = '1.9.5' %}
+{% set version = "1.9.9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: bd7607549ec1df600900b6309dfbd514102d461e56baf16bc3ddca84e1876f00
+  sha256: c0932398a4783a33586d5cc47b79592cd2b8220cb76d7530e4cf4f221eeca8a2
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -50,13 +50,11 @@ test:
 about:
   home: https://CRAN.R-project.org/package=Rfast
   license: GPL (>= 2.0)
-  summary: 'A collection of fast (utility) functions for data analysis. Column- and row- wise
-    means, medians, variances, minimums, maximums, many t, F and G-square tests, many
-    regressions (normal, logistic, Poisson), are some of the many fast functions. Reference:
-    Tsagris M, Papadakis M. (2018). Taking R to its limits: 70+ tips. PeerJ Preprints
-    6:e26605v1 <doi:10.7287/peerj.preprints.26605v1>.'
+  summary: 'A collection of fast (utility) functions for data analysis. Column- and row- wise means, medians, variances, minimums, maximums, many t, F and G-square
+    tests, many regressions (normal, logistic, Poisson), are some of the many fast functions. Reference: Tsagris M, Papadakis M. (2018). Taking R to its limits: 70+
+    tips. PeerJ Preprints 6:e26605v1 <doi:10.7287/peerj.preprints.26605v1>.'
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
