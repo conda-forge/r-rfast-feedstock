@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: bd7607549ec1df600900b6309dfbd514102d461e56baf16bc3ddca84e1876f00
+  sha256: c0932398a4783a33586d5cc47b79592cd2b8220cb76d7530e4cf4f221eeca8a2
 
 build:
   merge_build_host: True  # [win]
