@@ -1,4 +1,4 @@
-{% set version = '1.9.5' %}
+{% set version = '1.9.9' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: bd7607549ec1df600900b6309dfbd514102d461e56baf16bc3ddca84e1876f00
+  sha256: c0932398a4783a33586d5cc47b79592cd2b8220cb76d7530e4cf4f221eeca8a2
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,11 +25,11 @@ requirements:
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-rcpp >=0.12.3
@@ -37,7 +37,7 @@ requirements:
     - r-rcppziggurat
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
     - r-rcppziggurat
@@ -49,7 +49,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=Rfast
-  license: GPL (>= 2.0)
+  license: GPL-2.0-or-later
   summary: 'A collection of fast (utility) functions for data analysis. Column- and row- wise
     means, medians, variances, minimums, maximums, many t, F and G-square tests, many
     regressions (normal, logistic, Poisson), are some of the many fast functions. Reference:
