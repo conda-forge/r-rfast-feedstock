@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,6 +35,8 @@ requirements:
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
     - r-rcppziggurat
+    - libblas
+    - liblapack
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
