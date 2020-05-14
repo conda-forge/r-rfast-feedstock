@@ -36,6 +36,7 @@ requirements:
     - r-rcpparmadillo
     - r-rcppziggurat
     - libblas
+    - liblapack
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
