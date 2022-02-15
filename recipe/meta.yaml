@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: 959907e36e24620c07ec282b203b40214f4914f4928c07ee6491043c27af31d9
+  sha256: c399cb8623d757367ebfeaefb529407a7422a2160c65d60f16c2962004a80aa3
 
 build:
   merge_build_host: true  # [win]
