@@ -6,7 +6,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rfast-feedsto
 About r-rfast
 -------------
 
-Home: https://CRAN.R-project.org/package=Rfast
+Home: https://github.com/RfastOfficial/Rfast
 
 Package license: GPL-2.0-or-later
 
@@ -14,7 +14,7 @@ Summary: A collection of fast (utility) functions for data analysis. Column- and
 About r-rfast
 -------------
 
-Home: https://CRAN.R-project.org/package=Rfast
+Home: https://github.com/RfastOfficial/Rfast
 
 Package license: GPL-2.0-or-later
 
@@ -77,13 +77,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7258&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rfast-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7258&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rfast-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
