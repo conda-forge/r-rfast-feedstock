@@ -25,6 +25,7 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - r-rcpp                       # [build_platform != target_platform]
     - r-rcpparmadillo              # [build_platform != target_platform]
+    - r-rcppparallel               # [build_platform != target_platform]
     - r-rcppziggurat               # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -39,6 +40,7 @@ requirements:
     - r-base
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
+    - r-rcppparallel
     - r-rcppziggurat
     - libblas
     - liblapack
@@ -49,6 +51,7 @@ requirements:
     - {{ native }}gcc-libs         # [win]
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
+    - r-rcppparallel
     - r-rcppziggurat
 
 test:
