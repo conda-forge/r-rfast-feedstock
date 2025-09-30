@@ -26,6 +26,7 @@ requirements:
     - r-rcpparmadillo              # [build_platform != target_platform]
     - r-rcppparallel               # [build_platform != target_platform]
     - r-rcppziggurat               # [build_platform != target_platform]
+    - r-zigg                       # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -43,6 +44,7 @@ requirements:
     - r-rcpparmadillo
     - r-rcppparallel
     - r-rcppziggurat
+    - r-zigg
     - libblas
     - liblapack
     - libgomp                      # [linux]
@@ -54,6 +56,7 @@ requirements:
     - r-rcpparmadillo
     - r-rcppparallel
     - r-rcppziggurat
+    - r-zigg
 
 test:
   commands:
