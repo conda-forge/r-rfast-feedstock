@@ -50,6 +50,7 @@ requirements:
     - libgomp                      # [linux]
     - llvm-openmp                  # [osx]
     - tbb-devel                    # [not win]
+    - pcre2=10.46
   run:
     - r-base
     - r-rcpp >=0.12.3
