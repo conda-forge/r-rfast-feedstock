@@ -10,6 +10,8 @@ source:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
   sha256: f1bb242bed2bc5c294dfd2268a7e508420d7412fce0cc8e6fa2907dc97da12ba
+  patches:
+    - patches/0001-evaluated-rcppparallel-flags.patch
 
 build:
   number: 2
