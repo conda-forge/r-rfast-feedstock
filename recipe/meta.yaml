@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.1.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,15 +9,19 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: f9e46cac99db756cd49c9cd83be8adc0d381e6c03102389bfdcb8258d02418ff
+  sha256: f1bb242bed2bc5c294dfd2268a7e508420d7412fce0cc8e6fa2907dc97da12ba
+  patches:
+    - patches/0001-evaluated-rcppparallel-flags.patch
 
 build:
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -26,33 +30,40 @@ requirements:
     - r-rcpparmadillo              # [build_platform != target_platform]
     - r-rcppparallel               # [build_platform != target_platform]
     - r-rcppziggurat               # [build_platform != target_platform]
+    - r-zigg                       # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('fortran') }}    # [osx and arm64]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
+    - {{ posix }}sed
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - llvm-openmp                  # [osx]
   host:
     - r-base
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
     - r-rcppparallel
     - r-rcppziggurat
+    - r-zigg
     - libblas
     - liblapack
     - libgomp                      # [linux]
     - llvm-openmp                  # [osx]
+    - tbb-devel                    # [not win]
   run:
     - r-base
     - r-rcpp >=0.12.3
     - r-rcpparmadillo
     - r-rcppparallel
     - r-rcppziggurat
+    - r-zigg
+    - llvm-openmp                  # [osx]
 
 test:
   commands:
