@@ -1,4 +1,4 @@
-{% set version = "2.1.5.1" %}
+{% set version = "2.1.5.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rfast_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rfast/Rfast_{{ version }}.tar.gz
-  sha256: f1bb242bed2bc5c294dfd2268a7e508420d7412fce0cc8e6fa2907dc97da12ba
+  sha256: d2032ce3565b6e1e63b8d3ea66d3b4e92fcafd7db46a0e28ff93d60b87dc1697
   patches:
     - patches/0001-evaluated-rcppparallel-flags.patch
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
